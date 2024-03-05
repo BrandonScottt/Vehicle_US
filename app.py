@@ -7,15 +7,21 @@ df = pd.read_csv("vehicles_us.csv")
 df = df.dropna()
 
 df = df.astype({'model_year': int, 'odometer': int, 'cylinders': int, 'is_4wd': int})
-st.write(df)
 
 st.header("""
-   Vehicle US
+    Vehicle US
 """)
+
 st.write("""
-    This dashboard provides an interactive exploration of the Vehicle US dataset. 
-    It includes visualizations and insights to help understand key aspects of the dataset.
+    Vehicle US - Dataset
 """)
+st.write(df)
+
+
+
+st.write("""
+    #### <font color=red> This dashboard provides an interactive exploration of the Vehicle US dataset. It includes visualizations and insights to help understand key aspects of the dataset.
+""", unsafe_allow_html=True)
 
 #Filter
 st.sidebar.header("Filter data")
@@ -25,7 +31,7 @@ filtered_df = df[df["model"] == selected_category]
 
 fig = px.scatter(filtered_df, x="model_year", y="price", color="type")
 fig.update_layout(title="Price vs Model_year Graph")
-st.markdown("<b>Price vs Model_year Scatter Plot</b>: This scatter plot shows the relationship between the vehicle's model year and its price.")
+st.markdown("<b>Price vs Model_year Scatter Plot</b>: This scatter plot shows the relationship between the vehicle's model year and its price.", unsafe_allow_html=True)
 st.plotly_chart(fig)
 
 
@@ -35,7 +41,7 @@ hist_choice = st.selectbox('Split for price distribution', hist_list)
 
 hist = px.histogram(df, x="price", color=hist_choice, nbins=20)
 hist.update_layout(title="<b> Split of price by {}</b>".format(hist_choice))
-st.markdown("<b>Price Distribution Split by {}</b>: This histogram displays the distribution of prices based on the selected category.".format(hist_choice))
+st.markdown("<b>Price Distribution Split by {}</b>: This histogram displays the distribution of prices based on the selected category.".format(hist_choice), unsafe_allow_html=True)
 st.plotly_chart(hist)
 
 #defining age categoty per car
@@ -63,7 +69,7 @@ fig = px.scatter(df, x="price", y=choice_for_scatter, color="age_category", hove
 fig.update_layout(
 
 title="<b> price vs {}</b>".format(choice_for_scatter))
-st.markdown("<b>Price vs {} Scatter Plot</b>: This scatter plot shows the relationship between the vehicle's price and {}.".format(choice_for_scatter, choice_for_scatter))
+st.markdown("<b>Price vs {} Scatter Plot</b>: This scatter plot shows the relationship between the vehicle's price and {}.".format(choice_for_scatter, choice_for_scatter), unsafe_allow_html=True)
 st.plotly_chart(fig)
 
 #Scatter plot with checkbox
