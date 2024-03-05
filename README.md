@@ -4,5 +4,6 @@ This dashboard provides an interactive exploration of the Vehicle US dataset. It
 Render link: https://vehicle-us.onrender.com
 
 Run in local terminal:
+- fork project
 - pip install -r requirements.txt
 - streamlit run app.py
