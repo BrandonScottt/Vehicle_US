@@ -13,8 +13,9 @@ st.header("""
    Vehicle US
 """)
 st.write("""
-    #### <font color=red> testing st.write function
-""", unsafe_allow_html=True)
+    This dashboard provides an interactive exploration of the Vehicle US dataset. 
+    It includes visualizations and insights to help understand key aspects of the dataset.
+""")
 
 #Filter
 st.sidebar.header("Filter data")
@@ -24,9 +25,9 @@ filtered_df = df[df["model"] == selected_category]
 
 fig = px.scatter(filtered_df, x="model_year", y="price", color="type")
 fig.update_layout(title="Price vs Model_year Graph")
+st.markdown("<b>Price vs Model_year Scatter Plot</b>: This scatter plot shows the relationship between the vehicle's model year and its price.")
 st.plotly_chart(fig)
 
-st.markdown('<font color=red>Write descrption here</font>', unsafe_allow_html=True)
 
 #Histogram
 hist_list =['transmission', 'condition', 'fuel', 'type', 'paint_color']
@@ -34,9 +35,8 @@ hist_choice = st.selectbox('Split for price distribution', hist_list)
 
 hist = px.histogram(df, x="price", color=hist_choice, nbins=20)
 hist.update_layout(title="<b> Split of price by {}</b>".format(hist_choice))
+st.markdown("<b>Price Distribution Split by {}</b>: This histogram displays the distribution of prices based on the selected category.".format(hist_choice))
 st.plotly_chart(hist)
-
-#scatter
 
 #defining age categoty per car
 df['age']=2022-df['model_year']
@@ -63,7 +63,7 @@ fig = px.scatter(df, x="price", y=choice_for_scatter, color="age_category", hove
 fig.update_layout(
 
 title="<b> price vs {}</b>".format(choice_for_scatter))
-
+st.markdown("<b>Price vs {} Scatter Plot</b>: This scatter plot shows the relationship between the vehicle's price and {}.".format(choice_for_scatter, choice_for_scatter))
 st.plotly_chart(fig)
 
 #Scatter plot with checkbox
