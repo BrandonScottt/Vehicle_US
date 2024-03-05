@@ -13,15 +13,14 @@ st.header("""
 """)
 
 st.write("""
-    Vehicle US - Dataset
-""")
-st.write(df)
-
+    #### <font color=red> This dashboard provides an interactive exploration of the Vehicle US dataset. It includes visualizations and insights to help understand key aspects of the dataset.
+""", unsafe_allow_html=True)
 
 
 st.write("""
-    #### <font color=red> This dashboard provides an interactive exploration of the Vehicle US dataset. It includes visualizations and insights to help understand key aspects of the dataset.
-""", unsafe_allow_html=True)
+    Vehicle US - Dataset
+""")
+st.write(df)
 
 #Filter
 st.sidebar.header("Filter data")
