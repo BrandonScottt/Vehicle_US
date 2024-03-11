@@ -36,7 +36,7 @@ To run the Vehicle_US Dashboard locally, follow these steps:
      ```
 
 5. **Access the Dashboard:**
-   - Open your web browser and visit [http://localhost:8501](http://localhost:8501).
+   - Open your web browser and visit [http://localhost:8501](http://localhost:10000).
 
 ## Features
 
@@ -52,21 +52,3 @@ The data loading and preprocessing steps are handled in the `load_and_preprocess
 
 - Select different categories in the sidebar to filter data and view corresponding visualizations.
 - Enable the checkbox to display a data table along with scatter plots.
-
-## Deployment
-
-The live demo of the Vehicle_US Dashboard is hosted on Render. Feel free to explore the dashboard online: [Vehicle_US Dashboard](https://vehicle-us.onrender.com)
-
-## Contributing
-
-If you'd like to contribute to the project, please follow the guidelines outlined in [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Special thanks to the contributors and the Streamlit and Plotly Express communities.
-
-Feel free to contribute, open issues, or provide feedback to enhance the Vehicle_US Dashboard!
