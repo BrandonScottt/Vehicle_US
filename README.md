@@ -36,7 +36,7 @@ To run the Vehicle_US Dashboard locally, follow these steps:
      ```
 
 5. **Access the Dashboard:**
-   - Open your web browser and visit [http://localhost:8501](http://localhost:10000).
+   - Open your web browser and visit [http://localhost:10000](http://localhost:10000).
 
 ## Features
 
